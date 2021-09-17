@@ -1,0 +1,189 @@
+@import '_variables.scss';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: $body-font-size;
+  font-family: 'Josefin sans', 'sans-serif';
+  // .overlay{
+
+  //   height: 100%;
+  //   width: 0;
+  //   position: fixed;
+  //   z-index: 1;
+  //   top: 0;
+  //   left: 0;
+  //   background-color: rgb(0,0,0);
+  //   background-color: rgba(0,0,0, 0.9);
+  //   overflow-x: hidden;
+  //   transition: 0.5s;
+  // }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    background: url(../images/mobile/image-hero.jpg) no-repeat;
+    background-size: cover;
+    height: 40em;
+    padding: 1.5em;
+    justify-content: flex-start;
+    gap: 30%;
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+
+      h3 {
+        color: $white;
+        font-size: 1.5em;
+        font-family: 'Alata', 'sans-serif';
+      }
+      nav {
+        ul {
+          display: flex;
+          list-style-type: none;
+          li a {
+            color: $white;
+            text-decoration: none;
+            padding-right: 2em;
+          }
+        }
+      }
+      .hamburger {
+        background-image: url(../images/icon-hamburger.svg);
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        width: 1em;
+        margin-top: 0.2em;
+        height: 1em;
+        background-size: cover;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+    .hero-text {
+      color: $white;
+      border: 2px solid $white;
+      padding: 0.5em;
+      line-height: 1em;
+      font-size: unquote('clamp(1.5rem, -0.175rem + 10.333vw, 2.5rem)');
+    }
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    padding: 4em 2em;
+
+    .sub-container-1 {
+      img {
+        width: 100%;
+      }
+      .description {
+        padding: 0.5em;
+
+        h2 {
+          margin-top: 0.7em;
+          font-size: unquote('clamp(1.5rem, -0.175rem + 10.333vw, 2.5rem)');
+          font-family: 'Josefin Sans', 'sans-serif';
+          font-weight: 300;
+          line-height: 1em;
+          text-align: center;
+        }
+        p {
+          margin-top: 1em;
+          font-family: 'Alata', 'sans-serif';
+          color: $very-dark-gray;
+          text-align: center;
+          font-size: unquote('clamp(1rem, -0.175rem + 4.333vw, 2.5rem)');
+        }
+      }
+    }
+
+    .creation-banner {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Josefin Sans';
+      text-align: center;
+      margin-top: 2em;
+      h2 {
+        // align-self: center;
+        margin: 1em auto;
+        font-size: unquote('clamp(1.5rem, -0.175rem + 6.333vw, 2.5rem)');
+      }
+
+      button {
+        order: 3;
+        background: transparent;
+        border: 1px solid black;
+        font-family: 'Alata';
+        letter-spacing: 0.2em;
+        align-self: center;
+        margin: 1em auto;
+        padding: 0.25em 2em;
+        cursor: pointer;
+      }
+
+      button:hover{
+        background-color: $black;
+        color: $white;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+
+        div {
+          position: relative;
+          color: $white;
+          font-size: unquote('clamp(1.4rem, -0.175rem + 4.333vw, 3.5rem)');
+
+          img {
+            background-size: cover;
+            width: 100%;
+          }
+
+          p {
+            position: absolute;
+            bottom: 2em;
+            left: 0.5em;
+          }
+        }
+      }
+      .cards div img:hover{
+          opacity: 0.5;
+          cursor: pointer;        
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    background-color: $black;
+    .foot-left-container {
+    }
+
+    .foot-right-container {
+    }
+  }
+}
+@media screen and (min-width: 765px) {
+  .hamburger {
+    display: none;
+  }
+}
+@media screen and (max-width: 765px) {
+  .navigation nav {
+    display: none;
+  }
+}
