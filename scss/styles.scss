@@ -13,19 +13,66 @@ body {
   flex-direction: column;
   font-size: $body-font-size;
   font-family: 'Josefin sans', 'sans-serif';
-  // .overlay{
+  
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow:hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: $white;
+    padding: 2em;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      h3 {
+        font-size: 1.5em;
+        font-family: 'Alata', 'sans-serif';
+      }
 
-  //   height: 100%;
-  //   width: 0;
-  //   position: fixed;
-  //   z-index: 1;
-  //   top: 0;
-  //   left: 0;
-  //   background-color: rgb(0,0,0);
-  //   background-color: rgba(0,0,0, 0.9);
-  //   overflow-x: hidden;
-  //   transition: 0.5s;
-  // }
+      .close-btn {
+        background-image: url(../images/icon-close.svg);
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        width: 1em;
+        margin-top: 0.2em;
+        height: 1em;
+        background-size: cover;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+
+    nav {
+      margin-top: auto;
+      margin-bottom: auto;
+      ul {
+        list-style: none;
+
+        li {
+          margin: 1em 0;
+        }
+        li a {
+          text-decoration: none;
+          font-size: 2em;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .container {
+    // position: absolute;
+    z-index: 1;
+    transition: 1s;
+  }
 
   .header {
     display: flex;
@@ -76,6 +123,7 @@ body {
       padding: 0.5em;
       line-height: 1em;
       font-size: unquote('clamp(1.5rem, -0.175rem + 10.333vw, 2.5rem)');
+      
     }
   }
 
@@ -105,7 +153,7 @@ body {
           font-family: 'Alata', 'sans-serif';
           color: $very-dark-gray;
           text-align: center;
-          font-size: unquote('clamp(1rem, -0.175rem + 4.333vw, 2.5rem)');
+          font-size: 1.2rem;
         }
       }
     }
@@ -117,7 +165,6 @@ body {
       text-align: center;
       margin-top: 2em;
       h2 {
-        // align-self: center;
         margin: 1em auto;
         font-size: unquote('clamp(1.5rem, -0.175rem + 6.333vw, 2.5rem)');
       }
@@ -134,7 +181,7 @@ body {
         cursor: pointer;
       }
 
-      button:hover{
+      button:hover {
         background-color: $black;
         color: $white;
       }
@@ -160,9 +207,9 @@ body {
           }
         }
       }
-      .cards div img:hover{
-          opacity: 0.5;
-          cursor: pointer;        
+      .cards div img:hover {
+        opacity: 0.5;
+        cursor: pointer;
       }
     }
   }
@@ -170,10 +217,36 @@ body {
   footer {
     display: flex;
     background-color: $black;
-    .foot-left-container {
+    color: $white;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+
+    .foot-top-container {
+      h2 {
+      }
+
+      nav ul {
+        list-style: none;
+        font-weight: 700;
+        li {
+          text-align: center;
+          margin: 1em auto;
+        }
+      }
     }
 
-    .foot-right-container {
+    .foot-bottom-container {
+      .logos {
+        text-align: center;
+        img {
+          margin: 0.5em;
+        }
+      }
+      p {
+        text-align: center;
+        margin-bottom: 1em;
+      }
     }
   }
 }
@@ -181,6 +254,45 @@ body {
   .hamburger {
     display: none;
   }
+
+  .header {
+    
+    background-image: url(../images/desktop/image-hero.jpg) no-repeat;
+    background-size:inherit;
+  }
+  
+
+ 
+  .main-container{
+    padding: 5em;
+    .sub-container-1 {
+      display: flex;
+      font-size: 10px;
+      position: relative;
+     
+      img {
+        max-width: 70%;
+      }
+     
+      .description {
+        position: absolute;
+        background-color: $white;
+        bottom: 0;
+        left: 50%;
+        
+  
+        h2{
+       
+        }
+        p {
+          font-size: 0.8rem !important;
+  
+        }
+      }
+    }
+
+  }
+ 
 }
 @media screen and (max-width: 765px) {
   .navigation nav {
